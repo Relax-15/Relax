@@ -1,0 +1,47 @@
+package relax;
+import java.io.*;
+import java.util.Random;//import Random class
+import java.util.Scanner;//import Scanner class
+import java.util.Arrays;
+
+public class Relax {
+
+ 
+    public static void main(String[] args) {
+    
+        Random relax= new Random();//Create a random number
+        int [] rand = new int [8];//Create array object
+        System.out.println("-----------------BEFORE--------");
+        for(int d=0; d<rand.length; d++){
+            rand[d]= relax.nextInt(100);  
+        System.out.println(rand[d]);
+	}
+        
+        //Sort out the numbers 
+           for (int i = 0; i < rand.length; i++) 
+        {
+            for (int j = i + 1; j < rand.length; j++) { 
+                int tempStorage;
+                if (rand[i] > rand[j]) 
+                {
+                    tempStorage = rand[i];
+                    rand[i] = rand[j];
+                    rand[j] = tempStorage;
+                }
+            }
+        }
+ 
+    
+        System.out.println("----------------------------");
+        System.out.println("---------AFTER--------------");
+        for (int i = 0; i < rand.length - 1; i++) 
+        {
+            System.out.println(rand[i] );
+        }
+        System.out.println(rand[rand.length - 1]);
+        
+        System.out.println("----------------------------");
+      
+    }
+    
+}
